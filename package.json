@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "jsdom": "^22.0.0",
+    "nvm": "^0.0.4"
+  },
+  "name": "web-crawler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "scripts": {
+    "start": "node ./main.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": ""
+}
