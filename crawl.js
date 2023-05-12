@@ -10,11 +10,11 @@ function scrapeURL(htmlBody, baseURL) {
   let results = [];
   for (i of links) {
     if (i.href[0] === "/") {
-      results.push(normalizeURL(base.href.slice(0, -1) + i.href));
+      results.push(base.href.slice(0, -1) + i.href);
     }
     try {
       new URL(i);
-      results.push(normalizeURL(i.href));
+      results.push(i.href);
     } catch {}
   }
   return results;
@@ -62,7 +62,7 @@ async function crawlPage(absoluteURL, currentURL, pages) {
   const newLinks = scrapeURL(text, absoluteURL);
 
   for (const link of newLinks) {
-    pages = await crawlPage(absoluteURL, "https://" + link, pages);
+    pages = await crawlPage(absoluteURL, link, pages);
   }
   return pages;
 }
